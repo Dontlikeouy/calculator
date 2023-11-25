@@ -1,0 +1,341 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+
+/* Название сайта */
+
+.title {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 42px;
+}
+
+/* Калькулятор  */
+
+/*  Название/header   */
+
+.calc .subTitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.calc .adapt{
+  overflow: auto;
+}
+
+.calc .content {
+  display: flex;
+  justify-content: space-between;
+  width: 749px;
+  height: 474px;
+  background-color: #f4f4f5;
+  border: 1px solid #90909a;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+/* Левая часть  */
+
+.calc .left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.calc .left .name {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Поля ввода  */
+
+.calc .left .input {
+  width: 320px;
+  height: 35px;
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+}
+
+.calc input[type="number"] {
+  width: 100%;
+  height: 100%;
+  outline: 0px;
+  border: 0px;
+  font-size: 12px;
+  font-family: inherit;
+  border-radius: inherit;
+}
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+.calc .left .num {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 0 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.calc .num .describe {
+  font-size: 13px;
+}
+
+/* Slider  */
+
+/* Thanks Ali Babaee*/
+/* https://stackoverflow.com/questions/68119480/change-range-progress-color-with-css */
+input[type="range"] {
+  color: #b5a08d;
+  --thumb-height: 14px;
+  --track-height: 1px;
+  --clip-edges: 0.125em;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  top: -7px;
+  right: -3px;
+  width: 98%;
+}
+
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: var(--thumb-height);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+  --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+  --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+  --clip-further: calc(100% + 1px);
+  --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+    100vmax currentColor;
+
+  width: var(--thumb-width, var(--thumb-height));
+  background-color: currentColor;
+  box-shadow: var(--box-fill);
+  border-radius: 100%;
+
+  filter: 100%;
+  clip-path: polygon(
+    100% -1px,
+    var(--clip-edges) -1px,
+    0 var(--clip-top),
+    -100vmax var(--clip-top),
+    -100vmax var(--clip-bottom),
+    0 var(--clip-bottom),
+    var(--clip-edges) 100%,
+    var(--clip-further) var(--clip-further)
+  );
+}
+
+/* Кнопки  */
+
+.calc .buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.calc .buttons button {
+  background-color: #90909a33;
+  font-size: 12px;
+  padding: 2px 6px;
+  border: none;
+  border-radius: 2px;
+}
+
+.calc .buttons button:hover {
+  background-color: #b4b4c233 !important;
+}
+
+.calc .buttons button:active {
+  box-shadow: inset 0 0 2px #545454;
+}
+
+/* Разделитель */
+
+.calc .separator {
+  border: 1px solid #dcdcdc;
+}
+
+/* Правая часть  */
+
+/* Шапка  */
+.calc .right {
+  display: flex;
+  gap: 29px;
+  flex-direction: column;
+}
+.calc .right .head {
+  display: flex;
+  gap: 45px;
+}
+.calc .right .text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.calc .right .head .money {
+  color: #29282d;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.calc .right .info {
+  font-size: 12px;
+  width: 130px;
+}
+
+/* Информация/Свойства  */
+
+.calc .right .property {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.calc .right .element {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: end;
+}
+
+.calc .right .dots {
+  border-bottom: 1px dotted #90909a;
+}
+.calc .right .property .name {
+  font-size: 16px;
+}
+
+.calc .right .property .money {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Кнопка  */
+
+.calc .right .outButton {
+  border: 1px solid #b5a08d;
+  background-color: transparent;
+  padding: 14px 41px;
+  color: #b5a08d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.calc .right .outButton:hover {
+  background-color: #ececec;
+}
+.calc .right .outButton:active {
+  background-color: #dadada;
+}
+
+/*  Кнопки/footer   */
+
+.calc .footer {
+  margin-top: 32px;
+  display: flex;
+  gap: 20px;
+}
+.calc .footer .apply {
+  background-color: #b5a08d;
+  border: none;
+  padding: 14px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.calc .footer .apply:hover {
+  background-color: #8f7f72;
+}
+.calc .footer .apply:active {
+  background-color: #695e54;
+}
+.calc .footer .send {
+  background-color: transparent;
+  border: none;
+  color: #b5a08d;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.calc .footer .send:hover {
+  color: #8f7f72;
+}
+.calc .footer .send:active {
+  color: #695e54;
+}
+
+/*   График платежей    */
+
+.chart {
+  margin-top: 60px;
+}
+.chart .subTitle {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/*   Таблица   */
+
+.chart .adapt {
+  overflow-x: auto;
+}
+.chart table {
+  border-collapse: collapse;
+}
+
+.chart tr:last-child {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.chart th,
+td {
+  border: 1px solid black;
+  padding: 9px;
+  min-width: min-content;
+  width: 250px;
+}
+.chart th {
+  text-transform: uppercase;
+  color: white;
+  background-color: #90909a;
+  font-weight: 800;
+  font-size: 13px;
+  text-align: left;
+}
+.chart td {
+  background-color: white;
+  font-size: 13px;
+}
+.chart td {
+  color: black;
+  font-weight: inherit;
+}

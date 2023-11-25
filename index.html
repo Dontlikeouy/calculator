@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ипотечный калькулятор</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+      @font-face {
+        font-family: montserrat;
+        src: url(assets/fonts/Montserrat.ttf);
+      }
+    </style>
+  </head>
+  <body>
+    <!--  Калькулятор  -->
+    <h1 class="title">Ипотечный калькулятор</h1>
+
+    <div class="calc">
+      <!--  Название/header  -->
+
+      <p class="subTitle">Недвижимость</p>
+
+      <div class="adapt">
+        <!--  Content -->
+        <div class="content">
+          <!--  Левая часть  -->
+
+          <div class="left">
+            <!--  Стоимость недвижимости  -->
+
+            <div class="element">
+              <p class="name">Стоимость недвижимости</p>
+              <div class="input">
+                <div class="num">
+                  <input type="number" value="3000000" />
+                  <img src="assets/icons/ruble.svg" />
+                </div>
+                <input type="range" value="3000000" min="0" max="10000000" />
+              </div>
+            </div>
+
+            <!--  Первоначальный взнос  -->
+
+            <div class="element">
+              <p class="name">Первоначальный взнос</p>
+              <div class="input">
+                <div class="num">
+                  <input type="number" value="500000" />
+                  <img src="assets/icons/ruble.svg" />
+                </div>
+                <input type="range" value="500000" min="0" max="1000000" />
+              </div>
+              <div class="buttons">
+                <button name="button">0%</button>
+                <button name="button">10%</button>
+                <button name="button">15%</button>
+                <button name="button">20%</button>
+                <button name="button">25%</button>
+                <button name="button">30%</button>
+              </div>
+            </div>
+
+            <!--  Срок кредита  -->
+
+            <div class="element">
+              <p class="name">Срок кредита</p>
+              <div class="input">
+                <div class="num">
+                  <input type="number" value="20" />
+                  <p class="describe">Лет</p>
+                </div>
+                <input type="range" value="20" min="5" max="20" />
+              </div>
+              <div class="buttons">
+                <button name="button">5 лет</button>
+                <button name="button">10 лет</button>
+                <button name="button">15 лет</button>
+                <button name="button">20 лет</button>
+              </div>
+            </div>
+
+            <!--  Процентная ставка  -->
+
+            <div class="element">
+              <p class="name">Процентная ставка</p>
+              <div class="input">
+                <div class="num">
+                  <input type="number" value="7.3" />
+                  <p class="describe">%</p>
+                </div>
+                <input type="range" value="7.3" min="0.1" max="10" />
+              </div>
+              <div class="buttons">
+                <button name="button">0,1%</button>
+                <button name="button">4,5%</button>
+                <button name="button">6%</button>
+                <button name="button">7%</button>
+                <button name="button">7,5%</button>
+                <button name="button">9,1%</button>
+                <button name="button">10%</button>
+              </div>
+            </div>
+          </div>
+
+          <!--  Разделитель  -->
+
+          <div class="separator"></div>
+
+          <!--  Правая часть  -->
+
+          <div class="right">
+            <!--  Ежемесячный платеж  -->
+
+            <div class="head">
+              <div class="text">
+                <p class="money">19 835 ₽</p>
+                <p class="info">Ваш ежемесячный платеж</p>
+              </div>
+              <a href="#">
+                <img class="dowload" src="assets/icons/download.svg" />
+              </a>
+            </div>
+
+            <!--  Свойства  -->
+
+            <div class="property">
+              <!--  Кредит  -->
+
+              <div class="element">
+                <p class="name">Кредит</p>
+                <div class="dots"></div>
+                <p class="money">2 500 000 ₽</p>
+              </div>
+
+              <!--  Проценты  -->
+
+              <div class="element">
+                <p class="name">Проценты</p>
+                <div class="dots"></div>
+                <p class="money">2 260 450 ₽</p>
+              </div>
+
+              <!--  Проценты + кредит  -->
+
+              <div class="element">
+                <p class="name">Проценты + кредит</p>
+                <div class="dots"></div>
+                <p class="money">4 760 450 ₽</p>
+              </div>
+
+              <!--  Необходимый доход  -->
+
+              <div class="element">
+                <p class="name">Необходимый доход</p>
+                <div class="dots"></div>
+                <p class="money">4 760 450 ₽</p>
+              </div>
+            </div>
+            <!--  Кнопка  -->
+            <button class="outButton">Вывести график платежей</button>
+          </div>
+        </div>
+
+        <!--  Кнопки/footer  -->
+
+        <div class="footer">
+          <button class="apply">Подать заявку онлайн</button>
+          <button class="send">Переслать себе на E-mail</button>
+        </div>
+      </div>
+    </div>
+
+    <!--  График платежей  -->
+
+    <div class="chart">
+      <p class="subTitle">График платежей</p>
+      <div class="adapt">
+        <table>
+          <thead>
+            <tr>
+              <th>Номер платежа</th>
+              <th>Дата платежа</th>
+              <th>Остаток долга</th>
+              <th>В погашение долга</th>
+              <th>В погашение процентов</th>
+              <th>Платеж</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>19.11.2023</td>
+              <td>100000</td>
+              <td>0</td>
+              <td>416,67</td>
+              <td>416,67</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>19.12.2023</td>
+              <td>91096,91</td>
+              <td>8903,09</td>
+              <td>416,67</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>19.01.2024</td>
+              <td>82156,72</td>
+              <td>8940,19</td>
+              <td>379,57</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>19.02.2024</td>
+              <td>73179,28</td>
+              <td>8977,44</td>
+              <td>342,32</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>19.03.2024</td>
+              <td>64164,43</td>
+              <td>9014,85</td>
+              <td>304,91</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>19.04.2024</td>
+              <td>55112,02</td>
+              <td>9052,41</td>
+              <td>267,35</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>19.05.2024</td>
+              <td>46021,9</td>
+              <td>9090,13</td>
+              <td>229,63</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>19.06.2024</td>
+              <td>36893,89</td>
+              <td>9128</td>
+              <td>191,76</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>19.07.2024</td>
+              <td>27727,86</td>
+              <td>9166,04</td>
+              <td>153,72</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>19.08.2024</td>
+              <td>18523,63</td>
+              <td>9204,23</td>
+              <td>115,53</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>19.09.2024</td>
+              <td>9.281,05</td>
+              <td>9.242,58</td>
+              <td>77,18</td>
+              <td>9319,76</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>19.10.2024</td>
+              <td>0</td>
+              <td>9281,05</td>
+              <td>38,67</td>
+              <td>9319,72</td>
+            </tr>
+            <tr>
+              <td colspan="3">всего</td>
+
+              <td>100000</td>
+              <td>2933,99</td>
+              <td>102933,99</td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
